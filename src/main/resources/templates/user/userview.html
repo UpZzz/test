@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <p><strong>ID:</strong><span th:text="${user.id}"></span></p>
+    <p><strong>名字:</strong><span th:text="${user.cardno}"></span></p>
+    <p><strong>年龄:</strong><span th:text="${user.psname}"></span></p>
+</div>
+<div>
+    <a th:href="@{'/user/delete/'+${user.id}}">删除</a>
+    <a th:href="@{'/user/edit/'+${user.id}}">修改</a>
+</div>
+</body>
+</html>

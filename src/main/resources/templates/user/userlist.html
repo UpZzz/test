@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta content="text/html"/>
+    <meta charset="UTF-8">
+    <title>Content</title>
+</head>
+<body>
+<div>
+    <a href="/user/form" th:href="@{/user/form}">
+        新建用户
+    </a>
+</div>
+<table border="2">
+    <thead>
+    <tr>
+        <td>id</td>
+        <td>名字</td>
+        <td>证件号码</td>
+        <td>管理</td>
+    </tr>
+    <tr th:each="user:${contents}">
+        <td th:text="${user.sid}"></td>
+        <td th:text="${user.sname}"></td>
+        <td><a th:href="@{'/user/'+${user.sid}}" th:text="${user.sid}"></a></td>
+        <td><a th:href="@{'/user/delete/'+${user.sid}}">删除</a></td>
+    </tr>
+    </thead>
+</table>
+
+</body>
+</html>

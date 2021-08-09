@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout= "http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/student" th:action="@{/testThymeleaf}" method="post" th:object="${Student}">
+    <input type="hidden" name="sid" th:value="*{sid}">
+    名字<br/>
+    <input type="text" name="sname" th:value="*{sname}">
+    <br/>
+    <input type="text" name="sex" th:value="*{sex}">
+    <br/>
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>
